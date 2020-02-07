@@ -7,7 +7,7 @@ export default class NewItemRow extends Component {
   }
 
   handleDeleteButton(){
-    var index = parseInt(this.props.index)
+    var index = parseInt(this.props.key, 10)
     this.props.removeItem(index)
   }
 

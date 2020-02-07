@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NewItemRow from './NewItemRow';
 import ItemList from './ItemList';
 
-const arrayItem = [];
+
 export default class AddNewItem extends Component{
     constructor(props){
         super(props)
@@ -13,6 +13,7 @@ export default class AddNewItem extends Component{
         this.removeItem=this.removeItem.bind(this)
     }
     handleSubmit(e){
+        const arrayItem = this.state.items
         const temp = document.getElementById("input").value
         const form = document.getElementById("formAddItem")
 
