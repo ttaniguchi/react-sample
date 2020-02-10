@@ -7,37 +7,31 @@ export default class AddNewItem extends Component{
     constructor(props){
         super(props)
         this.state={
-            items: []
+            items: [],
+            temp:''
         }
         this.handleSubmit=this.handleSubmit.bind(this)
         this.removeItem=this.removeItem.bind(this)
+        this.handleChange=this.handleChange.bind(this)
+    }
+    handleChange(e){
+        this.setState({temp: e.target.value})
     }
     handleSubmit(e){
-        const arrayItem = this.state.items
-        const temp = document.getElementById("input").value
-        const form = document.getElementById("formAddItem")
-
-        arrayItem.push({
-            key: this.state.items.length,
-            value: temp
-        })
-
-        this.setState({items: arrayItem})
+        this.setState({items: this.state.items.concat(this.state.temp),
+                        temp: ''})
         e.preventDefault()
-        form.reset()
     }
     removeItem(index){
         const temp = this.state.items
-        console.log(index)
         temp.splice(index,1)
         this.setState({items: temp })
-        console.log(temp)
     }
     render(){
         return(
             <div>
                  <form id="formAddItem" onSubmit={this.handleSubmit}>
-                    <input type="text" id="input"></input>
+                    <input type="text" value={this.state.temp} onChange={this.handleChange}></input>
                     <button type="submit">Add</button>
                 </form>
                 <ItemList itemLists={this.state.items} removeItem={this.removeItem}/>
