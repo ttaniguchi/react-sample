@@ -1,15 +1,15 @@
 import React from "react";
-// import Counter from './Counter';
+import Counter from "./Counter";
 // import Memo from './Memo';
 // import Memo2 from './Memo2';
-import image from "./../../src/image.png";
+// import image from "./../../src/image.png";
 
 const App = () => (
   <div>
-    Hello World!
+    {/* Hello World!
     <br />
-    <img src={image} />
-    {/* <Counter /> */}
+    <img src={image} /> */}
+    <Counter />
     {/* <Memo /> */}
     {/* <Memo2 /> */}
   </div>
