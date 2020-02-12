@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = () => ({
+module.exports = (env) => ({
   optimization: {
     minimize: true,
     minimizer: [
@@ -22,7 +22,7 @@ module.exports = () => ({
       }),
     ],
   },
-  mode: 'development',
+  mode: env.NODE_ENV,
   cache: true,
   context: __dirname,
   entry: './jsx/index.jsx',

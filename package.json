@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Learning Reactjs",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot --inline --watch-content-base",
+    "start": "webpack-dev-server --mode development --hot --inline --watch-content-base --env.NODE_ENV=production",
     "build": "webpack",
     "watch": "webpack --mode development --progress --colors --watch",
     "eslint": "eslint 'jsx/**/*.{js,jsx}'"
