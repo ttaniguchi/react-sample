@@ -4,6 +4,7 @@
   "description": "Learning Reactjs",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --inline --watch-content-base",
+    "build": "webpack",
     "watch": "webpack --mode development --progress --colors --watch"
   },
   "dependencies": {
@@ -13,8 +14,14 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "terser-webpack-plugin": "^2.3.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3"

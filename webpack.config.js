@@ -1,7 +1,28 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = () => ({
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          parallel: true,
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+          },
+          output: {
+            beautify: false,
+            comments: false,
+          },
+          safari10: true,
+        },
+      }),
+    ],
+  },
+  mode: 'development',
   cache: true,
   context: __dirname,
   entry: './jsx/index.jsx',
@@ -18,6 +39,14 @@ module.exports = () => ({
           path.resolve(__dirname, 'jsx'),
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      }
     ]
   },
   devServer: {
