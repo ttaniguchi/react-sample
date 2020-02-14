@@ -40,6 +40,15 @@ module.exports = (env) => ({
         ],
       },
       {
+        test: /\.(js|jsx)$/,
+        use: 'eslint-loader',
+        include: [
+          path.resolve(__dirname, 'js'),
+          path.resolve(__dirname, 'jsx'),
+        ],
+        enforce: 'pre',
+      },
+      {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {

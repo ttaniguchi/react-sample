@@ -5,11 +5,7 @@ const Button = styled.button`
     position: relative;
     width: 177px;
     height: 36px;
-
-    padding-top: 11px;
-    padding-right: 57px;
-    padding-bottom: 12px;
-    padding-left: 57px;
+    justify-content: center;
     
     font-family: Noto Sans;
     font-style: normal;
