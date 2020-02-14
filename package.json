@@ -4,19 +4,22 @@
   "description": "Learning Reactjs",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --inline --watch-content-base --env.NODE_ENV=production",
-    "build": "webpack",
+    "build": "webpack --env.NODE_ENV=production",
     "watch": "webpack --mode development --progress --colors --watch",
     "eslint": "eslint 'jsx/**/*.{js,jsx}'"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.2",
     "base64-image-loader": "^1.2.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.7",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.3",
     "file-loader": "^5.0.2",
