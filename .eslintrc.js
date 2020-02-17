@@ -4,12 +4,7 @@ module.exports = {
         "es6": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:jsx-a11y/recommended",
-        "airbnb/hooks"
+        "airbnb"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -25,11 +20,10 @@ module.exports = {
     "plugins": [
         "react",
         "jsx-a11y",
-        "react-hooks",
         "import"
     ],
     "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        "no-return-assign": 0,
+        "react/no-array-index-key": 0
     }
 };
