@@ -17,7 +17,7 @@ export default class AddNewItem extends Component {
     this.setState({ temp: e.target.value });
   }
 
-  handleSubmit(e) {
+  handleSubmit() {
     const { items, temp } = this.state;
     this.setState(
       {
@@ -25,24 +25,26 @@ export default class AddNewItem extends Component {
         temp: '',
       },
     );
-    e.preventDefault();
   }
 
   removeItem(index) {
     const { items } = this.state;
     items.splice(index, 1);
-    this.setState({ items });
-    // alert(this.state.items)
+    const tmp = [...items];
+    this.setState(
+      {
+        items: tmp,
+        temp: '',
+      },
+    );
   }
 
   render() {
     const { items, temp } = this.state;
     return (
       <div>
-        <form id="formAddItem" onSubmit={this.handleSubmit}>
-          <input type="text" value={temp} onChange={this.handleChange} />
-          <button type="submit">Add</button>
-        </form>
+        <input type="text" value={temp} onChange={this.handleChange} />
+        <button type="button" onClick={this.handleSubmit}>Add</button>
         <ItemList itemLists={items} removeItem={this.removeItem} />
       </div>
     );
