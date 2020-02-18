@@ -25,25 +25,30 @@ const Button = styled.button`
     border-radius: 40px;
 `;
 
-export default class CountItem extends Component{
-    constructor(props){
-        super(props)
-        this.state ={
-            count: 0
-        }
-        this.handleClick=this.handleClick.bind(this)
-    }
+export default class CountItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-   handleClick (){
-       this.setState({count: this.state.count + 1})
-   }
+  handleClick() {
+    const { count } = this.state;
+    this.setState({ count: count + 1 });
+  }
 
-    render(){
-        return (
-            <div>
-                <h1>Count: {this.state.count} </h1>
-                <Button onClick={this.handleClick}>Count Up</Button>
-            </div>           
-        )
-    }
+  render() {
+    const { count } = this.state;
+    return (
+      <div>
+        <h1>
+          Count:
+          {count}
+        </h1>
+        <Button onClick={this.handleClick}>Count Up</Button>
+      </div>
+    );
+  }
 }

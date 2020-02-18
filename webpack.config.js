@@ -28,7 +28,7 @@ module.exports = (env) => ({
   entry: './jsx/index.jsx',
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/dist',
+    path: `${__dirname}/dist`,
   },
   module: {
     rules: [
@@ -41,7 +41,7 @@ module.exports = (env) => ({
       },
       {
         test: /\.(js|jsx)$/,
-        use: 'eslint-loader',
+        use: ['eslint-loader'],
         include: [
           path.resolve(__dirname, 'js'),
           path.resolve(__dirname, 'jsx'),
@@ -55,24 +55,24 @@ module.exports = (env) => ({
             loader: 'file-loader',
           },
         ],
-      }
-    ]
+      },
+    ],
   },
   devServer: {
     host: 'localhost',
     port: 8080,
-    open:true,
+    open: true,
     openPage: '.',
     contentBase: `${__dirname}/dist`,
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.jsx', '.js']
+    extensions: ['.jsx', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: 'index.html'
-    })
+      filename: 'index.html',
+    }),
   ],
 });
