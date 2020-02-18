@@ -8,15 +8,15 @@ export default class ItemList extends PureComponent {
     return (
       <ul>
         {
-    itemLists.map((item, idx) => (
-      <NewItemRow
-        index={idx}
-        key={idx}
-        value={item}
-        removeItem={removeItem}
-      />
-    ))
-}
+          itemLists.map((item, idx) => (
+            <NewItemRow
+              index={idx}
+              key={idx}
+              value={item}
+              removeItem={removeItem}
+            />
+          ))
+        }
       </ul>
     );
   }
